@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test</title>
+	<link rel="stylesheet" type="text/css" href="my-style.css">
+
+	<script type="text/javascript" src="jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="my-style.js"></script>
+
+	<script type="text/javascript">
+		var form;
+		$(document).ready(function() {
+			// var p = new Person();
+			// p.init('111');
+			form = new MyForm('test-form');
+			form.init();
+
+			console.log(form);
+		});
+
+		function MyForm(formId) {
+			this.container = $('#' + formId);
+			this.elements = {};
+			this.init = function() {
+				let inputs = this.container.find('.my-input');
+				for(let i = 0; i < inputs.length; i++) {
+					let id = $(inputs[i]).attr('id');
+					let element = new MyInput(id);
+					element.init();
+					this.elements[id] = element;
+				}
+			};
+		}
+
+		function MyInput(inputId) {
+			this.container = $('#' + inputId);
+			this.init = function() {
+				let label = this.container.attr('label');
+				this.container.append(`<span id="` + inputId + `-tips"></span>`);
+				this.container.append(`<label id="` + inputId + `-label" title="` + label + `">` + label + `</label>`);
+				this.container.append(`<input id="` + inputId + `-input" type="text"/>`)
+				this.elements = {
+					tips: $('#' + inputId + '-tips'),
+					label: $('#' + inputId + '-label'),
+					input: $('#' + inputId + '-input')
+				}
+			};
+
+			this.tips = function() {
+				return this.elements.tips.text();
+			};
+			this.tips = function(text) {
+				this.elements.tips.text(text);
+			};
+
+			this.label = function() {
+				return this.elements.label.text();
+			};
+			this.label = function(text) {
+				this.elements.label.text(text);
+				this.elements.label.attr('title', text);
+			};
+
+			this.val = function() {
+				return this.elements.input.val();
+			};
+			this.val = function(value) {
+				this.elements.input.val(value);
+			}
+
+			this.clear = function() {
+				this.tips('');
+				this.val('');
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="test-form" class="my-form-cntr">
+		<div id="Test" label="Test" class="my-input"></div>
+		<div id="Test2" label="Test2" class="my-input"></div>
+		<div id="Test3" label="Test3" class="my-input"></div>
+
+		<!-- <div class="my-input my-input-green">
+			<span></span>
+			<label>Test</label>
+			<input type="text">
+		</div> -->
+	</div>
+</body>
+</html>
