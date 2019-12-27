@@ -2,182 +2,36 @@
 <html>
 <head>
 	<title>test</title>
-	<link rel="stylesheet" type="text/css" href="my-style.css">
-
 	<script type="text/javascript" src="jquery-2.1.1.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="my-style.css">
+	<link rel="stylesheet" type="text/css" href="color-theme-iview.css">
 	<script type="text/javascript" src="my-style.js"></script>
 
 	<script type="text/javascript">
 		var form;
 		$(document).ready(function() {
-			form = new MyForm('test-form');
-			form.init();
-
-			$(window).resize(function() {
-				form.autoAdapt();
-			});
+			/*form = $('#test-form').MyForm({
+				widthAutoAdapt: true,
+				minWidthSize: 2,
+				maxWidthSize: 4,
+			});*/
 		});
-
-		function MyForm(formId) {
-			this.container = $('#' + formId); //容器
-			this.elements = {};
-
-			//初始化
-			this.init = function() {
-				let inputs = this.container.find('.my-input');
-				for(let i = 0; i < inputs.length; i++) {
-					let id = $(inputs[i]).attr('id');
-					let element = new MyInput(id);
-					element.init();
-					this.elements[id] = element;
-				}
-
-				this.autoAdapt();
-			};
-
-			//获取表单数据
-			this.val = function() {
-				let value = {};
-				for (key in this.elements) {
-					let elmt = this.elements[key];
-					value[elmt.id] = elmt.val();
-				}
-				return value;
-			}
-
-			//清空表单
-			this.clear = function() {
-				for (key in this.elements) {
-					let elmt = this.elements[key];
-					elmt.clear();
-				}
-			}
-
-			//根据宽度调整组件大小
-			this.autoAdapt = function() {
-				let width = this.container.width();
-				for (key in this.elements) {
-					let elmt = this.elements[key];
-					elmt.autoAdapt(width);
-				}
-			}
-		}
-
-		function MyInput(inputId) {
-			this.id = inputId; //id
-			this.container = $('#' + inputId); //容器
-
-			//初始化
-			this.init = function() {
-				let labelText = this.container.attr('label');
-				let tipsText = this.container.attr('tips');
-				labelText = labelText == undefined ? '' : labelText;
-				tipsText = tipsText == undefined ? '' : tipsText;
-
-				this.container.append(`<span id="` + inputId + `-tips">` + tipsText + `</span>`);
-				this.container.append(`<label id="` + inputId + `-label" title="` + labelText + `">` + labelText + `</label>`);
-				this.container.append(`<input id="` + inputId + `-input" type="text"/>`);
-
-				let tips = $('#' + inputId + '-tips');
-				let label = $('#' + inputId + '-label');
-				let input = $('#' + inputId + '-input');
-				this.elements = { //主要组件
-					tips: tips,
-					label: label,
-					input: input
-				};
-
-				//输入时Label过长会自动缩短
-				input.focus(function() {
-					label.css('max-width', '120px');
-				});
-				input.blur(function() {
-					label.css('max-width', '160px');
-				});
-			};
-
-			//错误提示
-			this.error = function(tips) {
-				this.normal();
-				this.container.addClass('error');
-				this.elements.tips.text(tips == undefined ? '' : tips);
-			};
-
-			//警告提示
-			this.warning = function(tips) {
-				this.normal();
-				this.container.addClass('warning');
-				this.elements.tips.text(tips == undefined ? '' : tips);
-			};
-
-			//清除提示
-			this.normal = function(tips) {
-				this.container.removeClass('error');
-				this.container.removeClass('warning');
-				this.elements.tips.text(tips == undefined ? '' : tips);
-			}
-
-			//清空 value & tips
-			this.clear = function() {
-				this.tips('');
-				this.val('');
-			};
-
-			//根据宽度自适应大小
-			this.autoAdapt = function(cntrWidth) {
-				this.container.removeClass('my-input-short');
-				this.container.removeClass('my-input-long');
-				this.container.removeClass('my-input-full');
-				if(cntrWidth <= 550){
-					this.container.addClass('my-input-full');
-				} else if(cntrWidth > 550 && cntrWidth <= 900) {
-					this.container.addClass('my-input-long');
-				} else if(cntrWidth > 1150) {
-					this.container.addClass('my-input-short');
-				}
-			};
-
-			//Getter and Setter
-			this.tips = function(text) {
-				if(text == undefined){
-					return this.elements.tips.text();
-				} else {
-					this.elements.tips.text(text);
-				}
-			};
-
-			this.label = function(text) {
-				if(text == undefined) {
-					return this.elements.label.text();
-				} else {
-					this.elements.label.text(text);
-					this.elements.label.attr('title', text);
-				}
-			};
-
-			this.val = function(value) {
-				if(value == undefined) {
-					return this.elements.input.val();
-				} else {
-					this.elements.input.val(value);
-				}
-			};
-		}
 	</script>
 </head>
 <body>
-	<div id="test-form" class="my-form-cntr">
+	<!-- <div id="test-form" class="my-form-cntr">
 		<div id="Test" label="TestLoooooooooooooooooong" tips="test" class="my-input"></div>
 		<div id="Test2" label="Test2" tips="就是想测测" class="my-input my-input-cyan"></div>
 		<div id="Test3" label="Test3" tips="" class="my-input my-input-green"></div>
 		<div id="Test4" label="Test4" class="my-input my-input-cyan"></div>
 		<div id="Test5" label="Test5" class="my-input my-input-green"></div>
+	</div> -->
 
-		<!-- <div class="my-input my-input-green">
-			<span></span>
-			<label>Test</label>
-			<input type="text">
-		</div> -->
+	<div class="my-input">
+		<span></span>
+		<label>Test</label>
+		<input type="text" name="" />
 	</div>
 </body>
 </html>

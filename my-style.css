@@ -28,13 +28,15 @@
 	width: 120px;
 	max-width: 160px;
 	padding: 5px 10px 5px 10px;
-	background-color: #F1F1F1;
+	background-color: #F7F7F7;
 	border-width: 1px 0px 1px 1px;
-	border-color: #AAA;
+	border-color: #BBB;
 	border-style: solid;
 	border-top-left-radius: 5px;
 	border-bottom-left-radius: 5px;
+	color: #333;
 	font-size: 13px;
+	font-family: Microsoft YaHei;
 	text-align: center;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -53,6 +55,7 @@
 	border-bottom-right-radius: 5px;
 	box-sizing: border-box;
 	font-size: 14px;
+	font-family: Microsoft YaHei;
 }
 .my-input > input:focus {
 	outline: none;
@@ -64,65 +67,10 @@
 	height: 16px;
 	padding-bottom: 2px;
 	font-size: 14px;
+	font-family: Microsoft YaHei;
 	text-align: center;
 	white-space: nowrap;
 	overflow: hidden;
 }
 
 
-.my-input-cyan > label {
-	color: #31708F;
-	background-color: #D9EDF7;
-	border-color: #ABD7E1;
-}
-.my-input-cyan > input {
-	border-color: #ABD7E1;
-}
-.my-input-cyan > input:focus {
-	border-color: #A3DDFF;
-}
-
-
-.my-input-green > label {
-	color: #3C763D;
-	background-color: #DFF0D8;
-	border-color: #C5D8B5;
-}
-.my-input-green > input {
-	border-color: #C5D8B5;
-}
-.my-input-green > input:focus {
-	border-color: #A3E5CC;
-}
-
-
-.my-input.warning > label {
-	color: #8A6D3B;
-	background-color: #FCF8E3;
-	border-color: #E9DABB;
-}
-.my-input.warning > input {
-	border-color: #E9DABB;
-}
-.my-input.warning > input:focus {
-	border-color: #F5E5AA;
-}
-.my-input.warning > span {
-	color: #8A6D3B;
-}
-
-
-.my-input.error > label {
-	color: #A94442;
-	background-color: #F2DEDE;
-	border-color: #DABBC1;
-}
-.my-input.error > input {
-	border-color: #DABBC1;
-}
-.my-input.error > input:focus {
-	border-color: #EE99AA;
-}
-.my-input.error > span {
-	color: #A94442;
-}
