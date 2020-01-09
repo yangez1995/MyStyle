@@ -3,10 +3,84 @@
 <head>
 	<title>test</title>
 	<script type="text/javascript" src="jquery-2.1.1.min.js"></script>
+	<!-- <script type="text/javascript" src="require.js"></script> -->
 
 	<link rel="stylesheet" type="text/css" href="my-style.css">
-	<link rel="stylesheet" type="text/css" href="color-theme-iview.css">
+	<link rel="stylesheet" type="text/css" href="color-theme-bs.css">
 	<script type="text/javascript" src="my-style.js"></script>
+
+	<style>
+		.my-select {
+			display: inline-block;
+			height: 32px;
+			background-color: #FFF;
+			border: #AAA solid 1px;
+			border-radius: 3px;
+		}
+
+		.my-select > li {
+			display: none;
+		}
+
+		.my-select-switch {
+			display: table;
+			width: 100%;
+			height: 100%;
+			margin: 0px;
+			padding-left: 10px;
+			box-sizing: border-box;
+			border: 0px;
+			line-height: 32px;
+			cursor: pointer;
+		}
+
+		.my-select-dropdown {
+			position: absolute;
+			display: none;
+			min-width: 120px;
+			height: 0px;
+			margin-top: 1px;
+			border: #CCC solid 1px;
+			border-radius: 3px;
+			background: #FFF;
+
+			transition: height 0.5s;
+			-webkit-transition: height 0.5s;
+		}
+
+		.open > .my-select-dropdown {
+			display: block;
+			height: auto;
+		}
+
+		.my-select-options > li {
+			list-style-type: none;
+			height: 22px;
+			padding: 4px 7px 4px 7px;
+			line-height: 22px;
+			cursor: pointer;
+		}
+		.my-select-options > li:hover {
+			background: #DDD;
+		}
+		.my-select-options > li.selected {
+
+		}
+		.my-select-options > li > i {
+			font-size: 
+		}
+
+		.my-select-toolbox {
+			padding: 7px;
+		}
+
+		.my-select-search {
+			width: 100%;
+			height: 30px;
+			border: #CCC solid 1px;
+			margin-bottom: 5px;
+		}
+	</style>
 
 	<script type="text/javascript">
 		var form;
@@ -16,7 +90,61 @@
 				minWidthSize: 2,
 				maxWidthSize: 4,
 			});*/
+
+			$('#Select1').MySelect();
+
+			$(document).bind('click', function(event) {
+				if((event.target).closest('.my-select') == null) {
+					$(document).find('.my-select.open').removeClass('open');
+				}
+			});
+
+			$('.my-select-switch').click(function() {
+				$(this).parent().toggleClass('open');
+			});
 		});
+	
+		(function($) {
+			'use strict';
+
+			$.fn.extend({
+				'MySelect': function() {
+					let select = new MySelect(this.attr('id'));
+					select.init();
+					return select;
+				}
+			});
+
+			function MySelect(elementId) {
+				this.container = $('#' + elementId);
+				this.optionList = [];
+
+				//初始化
+				this.init = function() {
+					//读取DOM设定的初始下拉选项列表
+					let options = this.container.find('li');
+					for(let i = 0; i < options.length; i++) {
+						let opt = $(options[i]);
+						let value = opt.attr('value');
+						let text = opt.text();
+						value = value == undefined ? text : value;
+						this.optionList.push({ value: value, text: text });
+					}
+
+					this.container.html('');
+					let html = `<div class="my-select-switch"><span value="` 
+						+ this.optionList[0].value + `">` 
+						+ this.optionList[0].text + `</span></div>`;
+					html += `<div class="my-select-dropdown">`;
+					for(let i = 0; i < this.optionList.length; i++) {
+						let opt = this.optionList[i];
+						html += `<li value="` + opt.value + `">` + opt.text + `</li>`;
+					}
+					html += `</div>`;
+					this.container.append(html);
+				}
+			}
+		})(jQuery)
 	</script>
 </head>
 <body>
@@ -28,10 +156,30 @@
 		<div id="Test5" label="Test5" class="my-input my-input-green"></div>
 	</div> -->
 
-	<div class="my-input">
-		<span></span>
-		<label>Test</label>
-		<input type="text" name="" />
+	<div id="Select1" class="my-select" style="width: 300px;">
+		<li value="A">AAA</li>
+		<li>BBB</li>
+		<li>CCC</li>
 	</div>
+
+	<div class="my-select" style="width: 300px;">
+		<div class="my-select-switch">
+			<span>AAA</span>
+		</div>
+		<div class="my-select-dropdown">
+			<div class="my-select-toolbox">
+				<input class="my-select-search" type="text">
+			</div>
+			<div class="my-select-options">
+				<li>AAA</li>
+				<li class="selected">BBB</li>
+				<li>CCC</li>
+				<li>AAA</li>
+				<li>BBB</li>
+				<li>CCC</li>
+			</div>
+		</div>
+	</div>
+	<hr style="width: 100%;border-bottom: #000 solid 1px;">
 </body>
 </html>
