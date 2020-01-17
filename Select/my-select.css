@@ -1,0 +1,116 @@
+.my-select {
+  height: 32px;
+  min-width: 200px;
+  display: inline-block;
+  border: #CCC solid 1px;
+  border-radius: 3px;
+}
+.my-select > li {
+  display: none;
+}
+.my-select.disabled .my-select-switch {
+  background: #EEE;
+  cursor: no-drop;
+}
+.my-select .my-select-switch {
+  width: 100%;
+  height: 100%;
+  display: table;
+  margin: 0px;
+  padding: 0px 0px 0px 10px;
+  border: 0px;
+  box-sizing: border-box;
+  line-height: 32px;
+  cursor: pointer;
+}
+.my-select .my-select-dropdown {
+  min-width: 200px;
+  position: absolute;
+  display: none;
+  margin: 2px 0px 0px 0px;
+  border: #CCC solid 1px;
+  border-radius: 3px;
+  background: #FFF;
+}
+.my-select .my-select-dropdown .my-select-toolbox {
+  padding: 5px;
+}
+.my-select .my-select-dropdown .my-select-toolbox .my-select-search {
+  width: 100%;
+  height: 32px;
+  margin: 0px 0px 5px 0px;
+  padding: 0px 0px 0px 7px;
+  border: #CCC solid 1px;
+  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 32px;
+  outline: none;
+}
+.my-select .my-select-dropdown .my-select-toolbox .my-select-search:focus {
+  border-color: #63B8FF;
+  box-shadow: 0px 0px 2px #63B8FF;
+}
+.my-select .my-select-dropdown .my-select-options {
+  overflow-y: auto;
+  /*&::-webkit-scrollbar-track {
+				box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+				border-radius: 10px;
+				background: #ededed;
+			}*/
+}
+.my-select .my-select-dropdown .my-select-options::-webkit-scrollbar {
+  width: 6px;
+}
+.my-select .my-select-dropdown .my-select-options::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background-color: #63B8FF;
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+}
+.my-select .my-select-dropdown .my-select-options > li {
+  height: 22px;
+  padding: 4px 7px 4px 7px;
+  border-left: #FFF solid 3px;
+  line-height: 22px;
+  list-style-type: none;
+  cursor: pointer;
+}
+.my-select .my-select-dropdown .my-select-options > li:hover {
+  background: #EFEFFF;
+  color: #63B8FF;
+  border-left: #63B8FF solid 3px;
+}
+.my-select .my-select-dropdown .my-select-options > li.selected {
+  color: #63B8FF;
+  border-left: #63B8FF solid 3px;
+}
+.my-select .my-select-dropdown .my-select-options > li.hide {
+  display: none;
+}
+.my-select.open {
+  border-color: #63B8FF;
+  box-shadow: 0px 0px 2px #63B8FF;
+}
+.my-select.open .my-select-dropdown {
+  height: auto;
+  display: block;
+}
+.my-select.green.open {
+  border-color: #00CD66;
+  box-shadow: 0px 0px 2px #00CD66;
+}
+.my-select.green .my-select-search:focus {
+  border-color: #00CD66 !important;
+  box-shadow: 0px 0px 2px #00CD66 !important;
+}
+.my-select.green .my-select-options::-webkit-scrollbar-thumb {
+  background-color: #00CD66;
+}
+.my-select.green .my-select-options > li:hover {
+  background: #EFFFEF;
+  color: #00CD66;
+  border-left: #00CD66 solid 3px;
+}
+.my-select.green .my-select-options > li.selected {
+  color: #00CD66;
+  border-left: #00CD66 solid 3px;
+}

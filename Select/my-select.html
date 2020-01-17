@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MySelect</title>
+	<script type="text/javascript" src="../jquery-2.1.1.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="my-select.css">
+	<script type="text/javascript" src="my-select.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			select1 = $('#Select1').MySelect({
+				search: true, //是否开启搜索。
+				searchAutoFocus: false //下拉菜单展开时, 是否自动获取搜索框焦点。
+			});
+
+			select1.onChange(function() {
+				console.log(select1.val());
+			});
+
+			select2 = $('#Select2').MySelect();
+		})
+	</script>
+</head>
+<body>
+	<div id="Select1" class="my-select" style="width: 300px;margin-top: 150px;">
+		<li value=""></li>
+		<li value="A">AAA</li>
+		<li value="B">BBB</li>
+		<li value="C">CCC</li>
+		<li value="AB">AAB</li>
+		<li value="BC">BBC</li>
+		<li value="CD">CCD</li>
+		<li value="D">DDD</li>
+		<li value="E">EEE</li>
+		<li value="F">FFF</li>
+	</div>
+
+	<div id="Select2" class="my-select green" style="width: 300px;margin-top: 150px;">
+		<li value=""></li>
+		<li value="A">AAA</li>
+		<li value="B">BBB</li>
+		<li value="C">CCC</li>
+		<li value="AB">AAB</li>
+		<li value="BC">BBC</li>
+		<li value="CD">CCD</li>
+		<li value="D">DDD</li>
+		<li value="E">EEE</li>
+		<li value="F">FFF</li>
+	</div>
+
+
+	<!-- <div class="my-select" style="width: 300px;">
+		<div class="my-select-switch">
+			<span>AAA</span>
+		</div>
+		<div class="my-select-dropdown">
+			<div class="my-select-toolbox">
+				<input class="my-select-search" type="text">
+			</div>
+			<div class="my-select-options">
+				<li class="selected">AAA</li>
+				<li>BBB</li>
+				<li>CCC</li>
+			</div>
+		</div>
+	</div>
+
+	<div class="my-select open" style="width: 300px;">
+		<div class="my-select-switch">
+			<span>AAA</span>
+		</div>
+		<div class="my-select-dropdown">
+			<div class="my-select-toolbox">
+				<input class="my-select-search" type="text">
+				<div class="my-select-button">
+					<button>Select All</button>
+					<button>Deselect All</button>
+				</div>
+			</div>
+			<div class="my-select-options">
+				<li class="selected">AAA</li>
+				<li>BBB</li>
+				<li>CCC</li>
+			</div>
+		</div>
+	</div> -->
+	<hr style="width: 100%;border-bottom: #000 solid 1px;">
+	<div style="height: 500px;"></div>
+</body>
+</html>
