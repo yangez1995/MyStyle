@@ -4,6 +4,7 @@
   display: inline-block;
   border: #CCC solid 1px;
   border-radius: 3px;
+  overflow: hidden;
 }
 .my-select > li {
   display: none;
@@ -50,6 +51,21 @@
   border-color: #63B8FF;
   box-shadow: 0px 0px 2px #63B8FF;
 }
+.my-select .my-select-dropdown .my-select-toolbox button {
+  width: 50%;
+  height: 32px;
+  border: #CCC solid 1px;
+  background: #FFF;
+  outline: none;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.my-select .my-select-dropdown .my-select-toolbox button:hover {
+  background: #EEE;
+}
+.my-select .my-select-dropdown .my-select-toolbox button:active {
+  background: #DDD;
+}
 .my-select .my-select-dropdown .my-select-options {
   overflow-y: auto;
   /*&::-webkit-scrollbar-track {
@@ -79,6 +95,9 @@
   color: #63B8FF;
   border-left: #63B8FF solid 3px;
 }
+.my-select .my-select-dropdown .my-select-options > li:active {
+  background: #DEDEF9;
+}
 .my-select .my-select-dropdown .my-select-options > li.selected {
   color: #63B8FF;
   border-left: #63B8FF solid 3px;
@@ -94,23 +113,163 @@
   height: auto;
   display: block;
 }
+.my-select.red.open {
+  border-color: #DD4444;
+  box-shadow: 0px 0px 2px #DD4444;
+}
+.my-select.red .my-select-dropdown .my-select-toolbox .my-select-search:focus {
+  border-color: #DD4444;
+  box-shadow: 0px 0px 2px #DD4444;
+}
+.my-select.red .my-select-dropdown .my-select-options::-webkit-scrollbar-thumb {
+  background-color: #DD4444;
+}
+.my-select.red .my-select-dropdown .my-select-options > li:hover {
+  background: #FFEFEF;
+  color: #DD4444;
+  border-left: #DD4444 solid 3px;
+}
+.my-select.red .my-select-dropdown .my-select-options > li.selected {
+  color: #DD4444;
+  border-left: #DD4444 solid 3px;
+}
+.my-select.orange.open {
+  border-color: #EE7942;
+  box-shadow: 0px 0px 2px #EE7942;
+}
+.my-select.orange .my-select-dropdown .my-select-toolbox .my-select-search:focus {
+  border-color: #EE7942;
+  box-shadow: 0px 0px 2px #EE7942;
+}
+.my-select.orange .my-select-dropdown .my-select-options::-webkit-scrollbar-thumb {
+  background-color: #EE7942;
+}
+.my-select.orange .my-select-dropdown .my-select-options > li:hover {
+  background: #FFF9EF;
+  color: #EE7942;
+  border-left: #EE7942 solid 3px;
+}
+.my-select.orange .my-select-dropdown .my-select-options > li.selected {
+  color: #EE7942;
+  border-left: #EE7942 solid 3px;
+}
+.my-select.yellow.open {
+  border-color: #EEBA33;
+  box-shadow: 0px 0px 2px #EEBA33;
+}
+.my-select.yellow .my-select-dropdown .my-select-toolbox .my-select-search:focus {
+  border-color: #EEBA33;
+  box-shadow: 0px 0px 2px #EEBA33;
+}
+.my-select.yellow .my-select-dropdown .my-select-options::-webkit-scrollbar-thumb {
+  background-color: #EEBA33;
+}
+.my-select.yellow .my-select-dropdown .my-select-options > li:hover {
+  background: #F9F9EF;
+  color: #EEBA33;
+  border-left: #EEBA33 solid 3px;
+}
+.my-select.yellow .my-select-dropdown .my-select-options > li.selected {
+  color: #EEBA33;
+  border-left: #EEBA33 solid 3px;
+}
 .my-select.green.open {
-  border-color: #00CD66;
-  box-shadow: 0px 0px 2px #00CD66;
+  border-color: #43CD80;
+  box-shadow: 0px 0px 2px #43CD80;
 }
-.my-select.green .my-select-search:focus {
-  border-color: #00CD66 !important;
-  box-shadow: 0px 0px 2px #00CD66 !important;
+.my-select.green .my-select-dropdown .my-select-toolbox .my-select-search:focus {
+  border-color: #43CD80;
+  box-shadow: 0px 0px 2px #43CD80;
 }
-.my-select.green .my-select-options::-webkit-scrollbar-thumb {
-  background-color: #00CD66;
+.my-select.green .my-select-dropdown .my-select-options::-webkit-scrollbar-thumb {
+  background-color: #43CD80;
 }
-.my-select.green .my-select-options > li:hover {
+.my-select.green .my-select-dropdown .my-select-options > li:hover {
   background: #EFFFEF;
-  color: #00CD66;
-  border-left: #00CD66 solid 3px;
+  color: #43CD80;
+  border-left: #43CD80 solid 3px;
 }
-.my-select.green .my-select-options > li.selected {
-  color: #00CD66;
-  border-left: #00CD66 solid 3px;
+.my-select.green .my-select-dropdown .my-select-options > li.selected {
+  color: #43CD80;
+  border-left: #43CD80 solid 3px;
+}
+.my-select.cyan.open {
+  border-color: #79DDDD;
+  box-shadow: 0px 0px 2px #79DDDD;
+}
+.my-select.cyan .my-select-dropdown .my-select-toolbox .my-select-search:focus {
+  border-color: #79DDDD;
+  box-shadow: 0px 0px 2px #79DDDD;
+}
+.my-select.cyan .my-select-dropdown .my-select-options::-webkit-scrollbar-thumb {
+  background-color: #79DDDD;
+}
+.my-select.cyan .my-select-dropdown .my-select-options > li:hover {
+  background: #EFFCFC;
+  color: #79DDDD;
+  border-left: #79DDDD solid 3px;
+}
+.my-select.cyan .my-select-dropdown .my-select-options > li.selected {
+  color: #79DDDD;
+  border-left: #79DDDD solid 3px;
+}
+.my-select.purple.open {
+  border-color: #9982DB;
+  box-shadow: 0px 0px 2px #9982DB;
+}
+.my-select.purple .my-select-dropdown .my-select-toolbox .my-select-search:focus {
+  border-color: #9982DB;
+  box-shadow: 0px 0px 2px #9982DB;
+}
+.my-select.purple .my-select-dropdown .my-select-options::-webkit-scrollbar-thumb {
+  background-color: #9982DB;
+}
+.my-select.purple .my-select-dropdown .my-select-options > li:hover {
+  background: #F5EFFF;
+  color: #9982DB;
+  border-left: #9982DB solid 3px;
+}
+.my-select.purple .my-select-dropdown .my-select-options > li.selected {
+  color: #9982DB;
+  border-left: #9982DB solid 3px;
+}
+.my-select.pink.open {
+  border-color: #EE799F;
+  box-shadow: 0px 0px 2px #EE799F;
+}
+.my-select.pink .my-select-dropdown .my-select-toolbox .my-select-search:focus {
+  border-color: #EE799F;
+  box-shadow: 0px 0px 2px #EE799F;
+}
+.my-select.pink .my-select-dropdown .my-select-options::-webkit-scrollbar-thumb {
+  background-color: #EE799F;
+}
+.my-select.pink .my-select-dropdown .my-select-options > li:hover {
+  background: #FFEFF5;
+  color: #EE799F;
+  border-left: #EE799F solid 3px;
+}
+.my-select.pink .my-select-dropdown .my-select-options > li.selected {
+  color: #EE799F;
+  border-left: #EE799F solid 3px;
+}
+.my-select.gray.open {
+  border-color: #BDBDBD;
+  box-shadow: 0px 0px 2px #BDBDBD;
+}
+.my-select.gray .my-select-dropdown .my-select-toolbox .my-select-search:focus {
+  border-color: #BDBDBD;
+  box-shadow: 0px 0px 2px #BDBDBD;
+}
+.my-select.gray .my-select-dropdown .my-select-options::-webkit-scrollbar-thumb {
+  background-color: #BDBDBD;
+}
+.my-select.gray .my-select-dropdown .my-select-options > li:hover {
+  background: #F5F5F5;
+  color: #BDBDBD;
+  border-left: #BDBDBD solid 3px;
+}
+.my-select.gray .my-select-dropdown .my-select-options > li.selected {
+  color: #BDBDBD;
+  border-left: #BDBDBD solid 3px;
 }
