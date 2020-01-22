@@ -1,0 +1,286 @@
+@mainHeight: 32px;
+@mainRadius: 3px;
+
+@bc-default: #CCC;
+
+@c-red: #DD4444;
+@c-orange: #EE7942;
+@c-yellow: #EEBA33;
+@c-green: #43CD80;
+@c-cyan: #79D9D9;
+@c-blue: #63B8FF;
+@c-purple: #9982DB;
+@c-pink: #EE799F;
+@c-gray: #BDBDBD;
+
+@bgc-red:  #EE7777;
+@bgc-orange: #F59953;
+@bgc-yellow: #F5C566;
+@bgc-green: #64D5A0;
+@bgc-cyan: #88E0E0;
+@bgc-blue: #74C9FF;
+@bgc-purple: #A9A1E3;
+@bgc-pink: #F590A9;
+@bgc-gray: #D0D0D0;
+
+
+.my-form {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.my-form-cell {
+	width: 32%;
+	display: table;
+	margin-left: 1%;
+
+	&.size-short {
+		width: 24%;
+		margin-left: 0.7%; 
+	}
+	&.size-normal {
+		width: 32%;
+		margin-left: 1%;
+	}
+	&.size-long {
+		width: 48.5%;
+		margin-left: 1%; 
+	}
+	&.size-full {
+		width: 98%;
+		margin-left: 1%; 
+	}
+
+	& > span {
+		height: 16px;
+		display: table-caption;
+		
+		padding-bottom: 2px;
+		font-size: 14px;
+		font-family: Microsoft YaHei;
+		text-align: center;
+
+		white-space: nowrap;
+		overflow: hidden;
+	}
+
+	& > label {
+		width: 120px;
+		max-width: 160px;
+		display: table-cell;
+		
+		padding: 0px 10px 0px 10px;
+		background-color: #F7F7F7;
+		border-width: 1px 0px 1px 1px;
+		border-color: @bc-default;
+		border-style: solid;
+		border-top-left-radius: @mainRadius;
+		border-bottom-left-radius: @mainRadius;
+		box-sizing: border-box;
+		color: #333;
+		font-size: 14px;
+		font-family: Microsoft YaHei;
+		text-align: center;
+		line-height: @mainHeight;
+
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+
+		transition: max-width 0.5s;
+		-webkit-transition: max-width 0.5s;
+	}
+
+	& > .my-select {
+		display: table-cell;
+		border-top-left-radius: 0px;
+		border-bottom-left-radius: 0px;
+	}
+
+	& > input {
+		width: 100%;
+		height: @mainHeight + 2px;
+		display: table-cell;
+		
+		padding: 0px 0px 0px 10px;
+		border: @bc-default solid 1px;
+		border-top-right-radius: @mainRadius;
+		border-bottom-right-radius: @mainRadius;
+		box-sizing: border-box;
+		font-size: 14px;
+		font-family: Microsoft YaHei;
+		line-height: @mainHeight;
+
+		&:focus {
+			outline: none;
+			border-color: @c-blue;
+			box-shadow: 0px 0px 3px @c-blue;
+		}
+	}
+
+	&.red {
+		& > label {
+			border-color: @c-red;
+			background-color: @bgc-red;
+			color: #FFF;
+		}
+		& > input {
+			border-color: @c-red;
+
+			&:focus {
+				border-color: @c-red;
+				box-shadow: 0px 0px 3px @c-red;
+			}
+		}
+		& > .my-select {
+			border-color: @c-red;
+		}
+	}
+
+	&.orange {
+		& > label {
+			border-color: @c-orange;
+			background-color: @bgc-orange;
+			color: #FFF;
+		}
+		& > input {
+			border-color: @c-orange;
+
+			&:focus {
+				border-color: @c-orange;
+				box-shadow: 0px 0px 3px @c-orange;
+			}
+		}
+		& > .my-select {
+			border-color: @c-orange;
+		}
+	}
+
+	&.yellow {
+		& > label {
+			border-color: @c-yellow;
+			background-color: @bgc-yellow;
+			color: #FFF;
+		}
+		& > input {
+			border-color: @c-yellow;
+
+			&:focus {
+				border-color: @c-yellow;
+				box-shadow: 0px 0px 3px @c-yellow;
+			}
+		}
+		& > .my-select {
+			border-color: @c-yellow;
+		}
+	}
+
+	&.green {
+		& > label {
+			border-color: @c-green;
+			background-color: @bgc-green;
+			color: #FFF;
+		}
+		& > input {
+			border-color: @c-green;
+
+			&:focus {
+				border-color: @c-green;
+				box-shadow: 0px 0px 3px @c-green;
+			}
+		}
+		& > .my-select {
+			border-color: @c-green;
+		}
+	}
+
+	&.cyan {
+		& > label {
+			border-color: @c-cyan;
+			background-color: @bgc-cyan;
+			color: #FFF;
+		}
+		& > input {
+			border-color: @c-cyan;
+
+			&:focus {
+				border-color: @c-cyan;
+				box-shadow: 0px 0px 3px @c-cyan;
+			}
+		}
+		& > .my-select {
+			border-color: @c-cyan;
+		}
+	}
+
+	&.blue {
+		& > label {
+			border-color: @c-blue;
+			background-color: @bgc-blue;
+			color: #FFF;
+		}
+		& > input {
+			border-color: @c-blue;
+		}
+		& > .my-select {
+			border-color: @c-blue;
+		}
+	}
+
+	&.purple {
+		& > label {
+			border-color: @c-purple;
+			background-color: @bgc-purple;
+			color: #FFF;
+		}
+		& > input {
+			border-color: @c-purple;
+
+			&:focus {
+				border-color: @c-purple;
+				box-shadow: 0px 0px 3px @c-purple;
+			}
+		}
+		& > .my-select {
+			border-color: @c-purple;
+		}
+	}
+
+	&.pink {
+		& > label {
+			border-color: @c-pink;
+			background-color: @bgc-pink;
+			color: #FFF;
+		}
+		& > input {
+			border-color: @c-pink;
+
+			&:focus {
+				border-color: @c-pink;
+				box-shadow: 0px 0px 3px @c-pink;
+			}
+		}
+		& > .my-select {
+			border-color: @c-pink;
+		}
+	}
+
+	&.gray {
+		& > label {
+			border-color: @c-gray;
+			background-color: @bgc-gray;
+			color: #FFF;
+		}
+		& > input {
+			border-color: @c-gray;
+
+			&:focus {
+				border-color: @c-gray;
+				box-shadow: 0px 0px 3px @c-gray;
+			}
+		}
+		& > .my-select {
+			border-color: @c-gray;
+		}
+	}
+}

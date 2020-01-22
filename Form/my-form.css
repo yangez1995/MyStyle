@@ -1,0 +1,212 @@
+.my-form {
+  display: flex;
+  flex-wrap: wrap;
+}
+.my-form-cell {
+  width: 32%;
+  display: table;
+  margin-left: 1%;
+}
+.my-form-cell.size-short {
+  width: 24%;
+  margin-left: 0.7%;
+}
+.my-form-cell.size-normal {
+  width: 32%;
+  margin-left: 1%;
+}
+.my-form-cell.size-long {
+  width: 48.5%;
+  margin-left: 1%;
+}
+.my-form-cell.size-full {
+  width: 98%;
+  margin-left: 1%;
+}
+.my-form-cell > span {
+  height: 16px;
+  display: table-caption;
+  padding-bottom: 2px;
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.my-form-cell > label {
+  width: 120px;
+  max-width: 160px;
+  display: table-cell;
+  padding: 0px 10px 0px 10px;
+  background-color: #F7F7F7;
+  border-width: 1px 0px 1px 1px;
+  border-color: #CCC;
+  border-style: solid;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  box-sizing: border-box;
+  color: #333;
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  text-align: center;
+  line-height: 32px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: max-width 0.5s;
+  -webkit-transition: max-width 0.5s;
+}
+.my-form-cell > .my-select {
+  display: table-cell;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+.my-form-cell > input {
+  width: 100%;
+  height: 34px;
+  display: table-cell;
+  padding: 0px 0px 0px 10px;
+  border: #CCC solid 1px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  line-height: 32px;
+}
+.my-form-cell > input:focus {
+  outline: none;
+  border-color: #63B8FF;
+  box-shadow: 0px 0px 3px #63B8FF;
+}
+.my-form-cell.red > label {
+  border-color: #DD4444;
+  background-color: #EE7777;
+  color: #FFF;
+}
+.my-form-cell.red > input {
+  border-color: #DD4444;
+}
+.my-form-cell.red > input:focus {
+  border-color: #DD4444;
+  box-shadow: 0px 0px 3px #DD4444;
+}
+.my-form-cell.red > .my-select {
+  border-color: #DD4444;
+}
+.my-form-cell.orange > label {
+  border-color: #EE7942;
+  background-color: #F59953;
+  color: #FFF;
+}
+.my-form-cell.orange > input {
+  border-color: #EE7942;
+}
+.my-form-cell.orange > input:focus {
+  border-color: #EE7942;
+  box-shadow: 0px 0px 3px #EE7942;
+}
+.my-form-cell.orange > .my-select {
+  border-color: #EE7942;
+}
+.my-form-cell.yellow > label {
+  border-color: #EEBA33;
+  background-color: #F5C566;
+  color: #FFF;
+}
+.my-form-cell.yellow > input {
+  border-color: #EEBA33;
+}
+.my-form-cell.yellow > input:focus {
+  border-color: #EEBA33;
+  box-shadow: 0px 0px 3px #EEBA33;
+}
+.my-form-cell.yellow > .my-select {
+  border-color: #EEBA33;
+}
+.my-form-cell.green > label {
+  border-color: #43CD80;
+  background-color: #64D5A0;
+  color: #FFF;
+}
+.my-form-cell.green > input {
+  border-color: #43CD80;
+}
+.my-form-cell.green > input:focus {
+  border-color: #43CD80;
+  box-shadow: 0px 0px 3px #43CD80;
+}
+.my-form-cell.green > .my-select {
+  border-color: #43CD80;
+}
+.my-form-cell.cyan > label {
+  border-color: #79D9D9;
+  background-color: #88E0E0;
+  color: #FFF;
+}
+.my-form-cell.cyan > input {
+  border-color: #79D9D9;
+}
+.my-form-cell.cyan > input:focus {
+  border-color: #79D9D9;
+  box-shadow: 0px 0px 3px #79D9D9;
+}
+.my-form-cell.cyan > .my-select {
+  border-color: #79D9D9;
+}
+.my-form-cell.blue > label {
+  border-color: #63B8FF;
+  background-color: #74C9FF;
+  color: #FFF;
+}
+.my-form-cell.blue > input {
+  border-color: #63B8FF;
+}
+.my-form-cell.blue > .my-select {
+  border-color: #63B8FF;
+}
+.my-form-cell.purple > label {
+  border-color: #9982DB;
+  background-color: #A9A1E3;
+  color: #FFF;
+}
+.my-form-cell.purple > input {
+  border-color: #9982DB;
+}
+.my-form-cell.purple > input:focus {
+  border-color: #9982DB;
+  box-shadow: 0px 0px 3px #9982DB;
+}
+.my-form-cell.purple > .my-select {
+  border-color: #9982DB;
+}
+.my-form-cell.pink > label {
+  border-color: #EE799F;
+  background-color: #F590A9;
+  color: #FFF;
+}
+.my-form-cell.pink > input {
+  border-color: #EE799F;
+}
+.my-form-cell.pink > input:focus {
+  border-color: #EE799F;
+  box-shadow: 0px 0px 3px #EE799F;
+}
+.my-form-cell.pink > .my-select {
+  border-color: #EE799F;
+}
+.my-form-cell.gray > label {
+  border-color: #BDBDBD;
+  background-color: #D0D0D0;
+  color: #FFF;
+}
+.my-form-cell.gray > input {
+  border-color: #BDBDBD;
+}
+.my-form-cell.gray > input:focus {
+  border-color: #BDBDBD;
+  box-shadow: 0px 0px 3px #BDBDBD;
+}
+.my-form-cell.gray > .my-select {
+  border-color: #BDBDBD;
+}

@@ -7,7 +7,7 @@
 @c-orange: #EE7942;
 @c-yellow: #EEBA33;
 @c-green: #43CD80;
-@c-cyan: #79DDDD;
+@c-cyan: #79D9D9;
 @c-blue: #63B8FF;
 @c-purple: #9982DB;
 @c-pink: #EE799F;
@@ -15,7 +15,6 @@
 
 .my-select {
 	height: @mainHeight;
-	min-width: 200px;
 	display: inline-block;
 
 	border: @bc-default solid 1px;
@@ -49,7 +48,7 @@
 	}
 
 	.my-select-dropdown {
-		min-width: 200px;
+		min-width: 160px;
 		position: absolute;
 		display: none;
 
@@ -85,7 +84,7 @@
 				width: 50%;
 				height: 32px;
 
-				border: #CCC solid 1px;
+				border: @bc-default solid 1px;
 				background: #FFF;
 				outline: none;
 
@@ -164,7 +163,7 @@
 
 	&.open {
 		border-color: @c-blue;
-		box-shadow: 0px 0px 2px @c-blue;
+		box-shadow: 0px 0px 3px @c-blue;
 
 		.my-select-dropdown {
 			height: auto;

@@ -37,8 +37,13 @@
 			}
 
 			if(!configs.multiple && (_value == null || _text == null)) {
-				_value = _options[0].value;
-				_text = _options[0].text;
+				if(_options.length == 0) {
+					_value = '';
+					_text = '';
+				} else {
+					_value = _options[0].value;
+					_text = _options[0].text;
+				}
 			}
 
 			//初始化DOM
